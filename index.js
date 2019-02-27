@@ -1,7 +1,7 @@
 var randomAccess = require('random-access-storage')
 var RNFS = require('react-native-fs')
 
-function fileReader(name) {
+module.exports = function fileReader(name) {
   return randomAccess({
     read: function (req) {
       RNFS.read(name, req.length, req.offset, 'base64').then(function(data) {
